@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -43,6 +44,7 @@ public class LoadingScreen extends ScreenAdapter {
         shapeRenderer = new ShapeRenderer();
 
         peteGame.assetManager.load("pete.tmx", TiledMap.class);
+        peteGame.assetManager.load("pete.png", Texture.class);
     }
 
     @Override

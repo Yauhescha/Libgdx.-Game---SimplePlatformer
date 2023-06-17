@@ -4,6 +4,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -43,7 +44,7 @@ public class GameScreen extends ScreenAdapter {
         orthogonalTiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap, batch);
         orthogonalTiledMapRenderer.setView(camera);
 
-        pete = new Pete();
+        pete = new Pete(PeteGame.assetManager.get("pete.png", Texture.class));
     }
 
     @Override
@@ -55,7 +56,7 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void update(float delta) {
-        pete.update();
+        pete.update(delta);
         stopPeteLeavingTheScreen();
     }
 
@@ -68,6 +69,7 @@ public class GameScreen extends ScreenAdapter {
         batch.setTransformMatrix(camera.view);
         orthogonalTiledMapRenderer.render();
         batch.begin();
+        pete.draw(batch);
         batch.end();
     }
 
