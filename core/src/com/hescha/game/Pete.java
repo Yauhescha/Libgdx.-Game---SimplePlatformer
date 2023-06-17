@@ -15,6 +15,7 @@ public class Pete {
     public static final int WIDTH = 16;
     public static final int HEIGHT = 15;
     private static final float MAX_JUMP_DISTANCE = 3 * HEIGHT;
+
     private final Rectangle collisionRectangle = new Rectangle(0, 0, WIDTH, HEIGHT);
 
     private float x = 0;
@@ -90,6 +91,12 @@ public class Pete {
         collisionRectangle.setPosition(x, y);
     }
 
+    public void landed() {
+        blockJump = false;
+        jumpYDistance = 0;
+        ySpeed = 0;
+    }
+
     public void setPosition(float x, float y) {
         this.x = x;
         this.y = y;
@@ -104,9 +111,7 @@ public class Pete {
         return y;
     }
 
-    public void landed() {
-        blockJump = false;
-        jumpYDistance = 0;
-        ySpeed = 0;
+    public Rectangle getCollisionRectangle() {
+        return collisionRectangle;
     }
 }
