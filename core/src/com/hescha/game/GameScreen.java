@@ -1,6 +1,8 @@
 package com.hescha.game;
 
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -56,9 +58,15 @@ public class GameScreen extends ScreenAdapter {
         orthogonalTiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap, batch);
         orthogonalTiledMapRenderer.setView(camera);
 
-        pete = new Pete(PeteGame.assetManager.get("pete.png", Texture.class));
+        pete = new Pete(
+                PeteGame.assetManager.get("pete.png", Texture.class),
+                PeteGame.assetManager.get("jump.wav", Sound.class)
+                );
         pete.setPosition(WORLD_WIDTH / 2, WORLD_HEIGHT / 2);
         populateAcorns();
+
+        PeteGame.assetManager.get("peteTheme.mp3", Music.class).setLooping(true);
+        PeteGame.assetManager.get("peteTheme.mp3", Music.class).play();
     }
 
     @Override
@@ -206,6 +214,7 @@ public class GameScreen extends ScreenAdapter {
             Acorn acorn = iter.next();
             if (pete.getCollisionRectangle().
                     overlaps(acorn.getCollision())) {
+                PeteGame.assetManager.get("acorn.wav", Sound.class).play();
                 iter.remove();
             }
         }

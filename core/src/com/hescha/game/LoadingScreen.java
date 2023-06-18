@@ -3,6 +3,8 @@ package com.hescha.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -46,6 +48,9 @@ public class LoadingScreen extends ScreenAdapter {
         peteGame.assetManager.load("pete.tmx", TiledMap.class);
         peteGame.assetManager.load("pete.png", Texture.class);
         peteGame.assetManager.load("acorn.png", Texture.class);
+        peteGame.assetManager.load("jump.wav", Sound.class);
+        peteGame.assetManager.load("acorn.wav", Sound.class);
+        peteGame.assetManager.load("peteTheme.mp3", Music.class);
     }
 
     @Override
