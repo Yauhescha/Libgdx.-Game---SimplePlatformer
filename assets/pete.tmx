@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="7">
- <tileset firstgid="1" name="floor" tilewidth="16" tileheight="16">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="80" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="7">
+ <tileset firstgid="1" name="floor" tilewidth="16" tileheight="16" tilecount="18" columns="6">
   <image source="floor.png" width="96" height="48"/>
  </tileset>
- <tileset firstgid="19" name="acorn" tilewidth="16" tileheight="16">
+ <tileset firstgid="19" name="acorn" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="acorn.png" width="16" height="16"/>
  </tileset>
- <layer name="Tile Layer 1" width="40" height="30">
+ <layer id="1" name="Tile Layer 1" width="80" height="30">
   <data encoding="base64" compression="zlib">
-   eJztkTkOgEAMA8N9n/9/LE6XIkisIFoKjzRFKke2CCGEEEIIIYSQOwrY/jivg3PQL1/kLfAM+uVNnvZcwgrWsJHYnVPztOceDnCEk8TunJqnPa9wgzs8JHbnJ3lex7lvu7XXce7bbu11nPu2W198GAZD
+   eJzt07sOwzAMQ1GlTdu06TP//7GlNw9GAAMRzOEegIMmcZAiAAAAAAAAAAAAgH2TcjXe597vpjyTuhyxz73fS9mSuhyxz7VfudOTclZm5RK5f9K7z71fudNFuSsPZY3cP+nd596v3Olb+Shf5Re5f9K7z7Ff60ZHz/WvuPdr3ejouf4V936tGx0917/i3u8Pxm8MhQ==
   </data>
  </layer>
- <objectgroup name="Collectables">
-  <object id="1" gid="19" x="336" y="432"/>
-  <object id="4" gid="19" x="272" y="432"/>
-  <object id="5" gid="19" x="304" y="416"/>
-  <object id="6" gid="19" x="368" y="416"/>
+ <objectgroup id="2" name="Collectables">
+  <object id="1" gid="19" x="336" y="432" width="16" height="16"/>
+  <object id="4" gid="19" x="272" y="432" width="16" height="16"/>
+  <object id="5" gid="19" x="304" y="416" width="16" height="16"/>
+  <object id="6" gid="19" x="368" y="416" width="16" height="16"/>
  </objectgroup>
 </map>
